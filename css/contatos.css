@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Battambang:wght@300&family=Poppins:wght@100&family=Roboto:ital,wght@0,100;1,300&family=Urbanist:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bangers', sans-serif;
+}
+
+body{
+    background-image: url(/img/bakground-contato.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 40px;
+    width: 500px;
+}
+
+section h2{
+    font-size: 2.5rem;
+    margin: 2rem;
+}
+
+section form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form label{
+    color: green;
+    font-size: 26px;
+    padding: 10px;
+}
+
+form input{
+    padding: 15px;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+form textarea{
+    padding: 10px;
+    outline: none;
+    border: 0;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    resize: vertical;
+    color: gray;
+}
+
+form button{
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 0.8s;
+    color: green;
+}
+
+form button:hover{
+    color: white;
+    background-color: #153049;
+    margin-top: -14px;
+}
+
+section img{
+    width: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 743px) {
+    
+section{
+    width: 400px;
+}
+
+}
+
+@media screen and (max-width: 500px) {
+    
+    section{
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    section img{
+        width: 300px;
+    }
+    
+    section{
+        width: 200px;
+    }
+
+    form input::placeholder{
+        width: 200px;
+        justify-self: left;
+    }
+}

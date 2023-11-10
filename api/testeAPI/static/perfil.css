@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Battambang:wght@300&family=Poppins:wght@100&family=Roboto:ital,wght@0,100;1,300&family=Urbanist:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Bangers', sans-serif;
+}
+
+body{
+    background-image: url(./background-login.png);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+ }
+
+#title-user{
+    flex-direction: column;
+    font-size: 20px;
+    line-height: 10px;
+ }
+
+ li {
+    display: inline-block;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: 400; 
+    font-size: 10px;
+    color: white;
+ }
+
+
+ h1{
+    font-weight: 200;
+    color: white;
+ }
+
+header .user{
+    color: #A4E473;
+ }

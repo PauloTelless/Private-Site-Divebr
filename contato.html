@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./ico/faveicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/contatos.css">
+    <title>Contato</title>
+</head>
+<body>
+    
+    <section class="contatos">
+        <img src="./img/logo-dive-cartoes.png" alt="">
+        <form action="https://api.staticforms.xyz/submit" method="POST">
+            <label>Nome</label>
+            <input type="text" name="name" placeholder="Digite o seu Nome" required autocomplete="off">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Digite o seu email" required autocomplete="off">
+            <label>Mensagem</label>
+            <textarea name="message" required cols="30" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+
+            <input type="hidden" name="accessKey" value="57073c0e-6fc0-4f88-ac9e-46dd25a7c63f">
+            <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/contatos.html">
+        </form>
+    </section>
+</body>
+</html>
