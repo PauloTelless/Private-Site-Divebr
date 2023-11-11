@@ -85,14 +85,39 @@ section img{
 
 @media screen and (max-width: 743px) {
     
-section{
-    width: 400px;
+    section{
+        width: 400px;
+    }
+
 }
 
+@media screen and (max-width: 820px) {
+    /*background-tablet-contato1000 significa que a largura é = 800px*/
+    body {
+        background-image: url(/img/background-tablet-contato-800.png);
+    }
+    section{
+        width: 400px;
+    }
+    
+}
+
+@media screen and (max-width: 1024px) {
+
+    /*background-tablet-contato1000 significa que a largura é = 1000px*/
+    body {
+        background-image: url(/img/background-tablet-contato1000.png);
+    }
+    section{
+        width: 400px;
+    }
+    
 }
 
 @media screen and (max-width: 500px) {
-    
+    body{
+        background-image: url(/img/background-mobile-contato.png);
+    }
     section{
         width: 280px;
     }
