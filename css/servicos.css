@@ -9,6 +9,7 @@
     font-weight: 550;
 }
 
+/*inicio cartões*/
 body{
     background-image: url(/img/backgroud-form.png);
     display: flex;
@@ -75,12 +76,42 @@ body{
     margin-top: 20px;
 }
 
-
+/*Animação dos cartões*/
 .container .card:hover{
     background-color: #A4E473;
     color: white;
     margin-top: -30px;
     box-shadow: 2px 20px 25px #152a3d;
+}
+/*Fim cartões*/
+
+/*inicio responsivo*/
+@media screen and (min-width: 1930px) {
+    body {
+        background-image: none;
+        background-color: #153049;
+    }
+}
+
+@media screen and (min-height: 1080px) {
+    body {
+        background-image: none;
+        background-color: #153049;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    /*background-servicos1400 significa que a imagem tem 1400px de largura*/
+    body{
+        background-image: url(/img/background-servicos1400.png);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .container .card:hover{
+       margin-top: -15px;
+    }
 }
 
 @media screen and (max-width: 300px) {
@@ -94,12 +125,4 @@ body{
     }
 }
 
-
-
-
-@media screen and (max-width: 500px) {
-    
-    .container .card:hover{
-       margin-top: -15px;
-    }
-}
+/*Fim responsivo*/
