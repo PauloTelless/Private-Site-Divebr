@@ -1,9 +1,11 @@
-import mysql.connector
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-# Variáveis para fazer a conexão com o banco de dados
-myDb = mysql.connector.connect(
-    user='root',
-    host='localhost',
-    password='',
-    database='usersdatabase'
-)
+Base = declarative_base() #Cria uma base modelo (Fazer classes padrões)
+
+class Establishment(Base):
+    __tablename__ = 'establishment_data' #Cria a tabela 
+    
+    id = Column(Integer, primary_key=True)  #Cria os campos com os tipos e definições 
+    nome_estabelecimento = Column(String)
+    email_estabelecimento = Column(String)

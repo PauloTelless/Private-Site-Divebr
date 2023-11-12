@@ -1,62 +1,32 @@
-from flask import  Flask, request, redirect, url_for, render_template
-from database import myDb
+from flask import Flask, request, redirect, url_for, render_template
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from database import Base, Establishment
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.config['JSON_SORT_KEY'] = False
 
-# Cria o usuário quando o botão de cadastrar com todas as variáveis é acionado
-@app.route("/users/create", methods=['POST'])
-def create_user():
-    nome = request.form.get('nome')
-    email = request.form.get('email')   # variáveis são criadas resgatando os valores do formulário em cadastro.html
-    senha = request.form.get('senha')
-    telefone = request.form.get('telefone')
-
-    # Conecta com o banco de dados e insere os dados
-    myCursor = myDb.cursor()
-    sql = f"INSERT INTO users (nome, senha, email, telefone) VALUES ('{nome}','{senha}','{email}','{telefone}')"
-    myCursor.execute(sql)
-    myDb.commit()
-
-    # Agora obtenha o ID do usuário recém-criado
-    userId = myCursor.lastrowid
-
-    # Redirecione o usuário para a página de perfil pessoal com base no ID do usuário
-    return redirect(url_for('perfil', userId=userId))
-
-# O retorno é essa rota, a qual é responsável por retornar outra página
-@app.route("/perfil/<int:userId>")
-def perfil(userId):
-    myCursor = myDb.cursor()
-    sql = f"SELECT * FROM users WHERE id = {userId}" # Procura no banco de dados o id que foi passado no retorno da função "create_user"
-    myCursor.execute(sql)
-    usuario = myCursor.fetchone() # Aqui um linha do banco de dados é recuperada com a informação necessária"
-
-    if usuario:
-        # Renderize a página de perfil personalizada com as informações do usuário
-        return render_template("perfil.html", usuario=usuario)
-    else:
-        # Trate o caso em que o usuário não existe (por exemplo, exiba uma mensagem de erro)
-        return render_template("perfil_nao_encontrado.html")
-
+# Configuração do SQLAlchemy
+engine = create_engine('mysql+pymysql://root:@localhost:3306/establishment', echo=True) #Instância criada para fazer as configurações do SQLAlchemy
+Base.metadata.create_all(engine)  # Cria todas a tabelas definidas em database.py
+Session = sessionmaker(bind=engine) #Cria uma sessão de objetos
 
 # Essa rota é onde irá ser criado um estabelecimento 
 @app.route("/establishment/create", methods=['POST'])
 def create_establishment():
-    estalecimento = request.form.get('nome')  # As variáveis criadas pegam o valor que veio do formulário de "landingPage.html"
-    email = request.form.get('email') 
-    myCursor = myDb.cursor()
-    sql = f"INSERT INTO establishmentlist (estabelecimento, email) VALUES ('{estalecimento}', '{email}')" # Insere as informações no banco de dados
-    myCursor.execute(sql)
-    myDb.commit()
+    nome_estabelecimento = request.form.get('nome') #Pega a informação do input do HTML (nome)
+    email_estabelecimento = request.form.get('email')#Pega a informação do input do HTML (email)
 
-    return redirect(url_for('login')) # Por enquanto, a função retorna para a rota login
+    session = Session() #Session é a que vai fazer a interação com o banco de dados.
+    new_establishment = Establishment(nome_estabelecimento=nome_estabelecimento, email_estabelecimento=email_estabelecimento) # cria uma instância do estabelecimento (class Establishment)
+    session.add(new_establishment) #Adiciona o objeto criado, mas ele ainda em standby
+    session.commit() #Atualiza no banco de dados e insere os dados no banco de dados 
 
-# Na rota login é renderizada a página de login
+    return redirect(url_for('login'))  #Redireciona para a página de login 
+
+# Página de Login
 @app.route("/login", methods=['GET'])
 def login():
     return render_template("login.html")
 
-
-if '__main__' == __name__:
+if __name__ == "__main__":
     app.run(debug=True)
