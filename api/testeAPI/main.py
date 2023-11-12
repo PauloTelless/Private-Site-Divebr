@@ -10,6 +10,12 @@ def create_establishment():
     email_estabelecimento = request.form.get('email')
 
     session = Session()
+    existing_establishment = session.query(Establishment).filter_by(email_estabelecimento=email_estabelecimento).first() #query para filtrar se o email já é cadastrado
+
+    if existing_establishment:
+        # retorna para uma página de erro e depois é retornado para a landing page
+        return render_template("erroremail.html")
+
     new_establishment = Establishment(nome_estabelecimento=nome_estabelecimento, email_estabelecimento=email_estabelecimento)
     session.add(new_establishment)
     session.commit()
