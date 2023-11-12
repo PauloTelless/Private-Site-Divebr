@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Battambang:wght@300&family=Poppins:wght@100&family=Roboto:ital,wght@0,100;1,300&family=Urbanist:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bangers', sans-serif;
+}
+
+body {
+    background-image: url(img/background-landing-page.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+img {
+    max-width: 100%; 
+    max-height: 100%; 
+    padding: 20%;
+    box-sizing: border-box; 
+}
+
+@media screen and (max-width:700px) {
+    img {
+        max-width: 100%; 
+        max-height: 100%; 
+        padding: 5%;
+        box-sizing: border-box; 
+    }
+}

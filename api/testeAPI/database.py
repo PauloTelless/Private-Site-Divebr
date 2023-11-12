@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-
 Base = declarative_base() #Cria uma base modelo (Fazer classes padrões)
 # Configuração do SQLAlchemy
 engine = create_engine('mysql+pymysql://root:@localhost:3306/establishment', echo=True) #Instância criada para fazer as configurações do SQLAlchemy
