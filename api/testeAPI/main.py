@@ -1,14 +1,7 @@
 from flask import Flask, request, redirect, url_for, render_template
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from database import Base, Establishment
+from database import Establishment, Session 
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-
-# Configuração do SQLAlchemy
-engine = create_engine('mysql+pymysql://root:@localhost:3306/establishment', echo=True) #Instância criada para fazer as configurações do SQLAlchemy
-Base.metadata.create_all(engine)  # Cria todas a tabelas definidas em database.py
-Session = sessionmaker(bind=engine) #Cria uma sessão de objetos
 
 # Essa rota é onde irá ser criado um estabelecimento 
 @app.route("/establishment/create", methods=['POST'])
