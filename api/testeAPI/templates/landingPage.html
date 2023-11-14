@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/landingpage.css">
-    <link rel="icon" href="./ico/faveicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='landingpage.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/faveicon.ico')}}" type="image/x-icon">
     <title>Conheça a Dive ©</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
             <h1>Loyalty</h1>
         </div>
         <ul> <!--Coleção-->
-            <a href="./landingPage.html"><li>Home</li></a>
-            <a href="./servicos.html"><li>Serviços</li></a>    <!--Lista desordenada-->
-            <a href="./contato.html"><li>Contato</li></a>
+            <a href="#"><li>Home</li></a>
+            <a href="{{ url_for('servicos') }}"><li>Serviços</li></a>    <!--Lista desordenada-->
+            <a href="{{ url_for('contato') }}"><li>Contato</li></a>
         </ul>
     </header>
     <main>
@@ -30,12 +30,12 @@
             </form>
         </aside>
         <article>
-            <img src="./img/logo-landing-page.png" alt="logo-dive">
+            <img src="{{url_for('static', filename='img/logo-landing-page.png')}}" alt="logo-dive">
         </article>
     </main>
     <footer>
-        <a href="./servicos.html">
-            <img src="./img/foto-conheca-servico.png">
+        <a href="{{ url_for('servicos') }}">
+            <img src="{{url_for('static', filename='img/foto-conheca-servico.png')}}">
         </a>
     </footer>
 </body>

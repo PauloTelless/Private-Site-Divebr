@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/servicos.css">
-    <link rel="icon" href="./ico/faveicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='servicos.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/faveicon.ico')}}" type="image/x-icon">
     <title>Serviços</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <!--Primeiro Card-->
         <div class="card">
              <div class="img">
-                <img src="./img/logo-servico.png">
+                <img src="{{url_for('static', filename='img/logo-servico.png')}}">
              </div>
              <h1>CARTÃO FIDELIDADE</h1>
              <div class="content">
@@ -25,7 +25,7 @@
         <!--Segundo Card-->
         <div class="card">
             <div class="img">
-               <img src="./img/logo-campanha.png">
+               <img src="{{url_for('static', filename='img/logo-campanha.png')}}">
             </div>
             <h1>CAMPANHAS</h1>
             <div class="content">
@@ -38,7 +38,7 @@
        <!--Terceiro Card-->
        <div class="card">
         <div class="img">
-           <img src="./img/logo-scuba-ia.png">
+           <img src="{{url_for('static', filename='img/logo-scuba-ia.png')}}">
         </div>
         <h1>SCUBA AI</h1>
         <div class="content">

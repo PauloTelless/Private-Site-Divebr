@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Battambang:wght@300&family=Poppins:wght@100&family=Roboto:ital,wght@0,100;1,300&family=Urbanist:wght@100&display=swap');
 
  body{
-    background-image: url(/img/background-landing-page.png);
+    background-image: url(./img/background-landing-page.png);
     color: white;
     max-width: 1200px;
     margin: 0 auto;
@@ -199,7 +199,7 @@ span{
 
     /*background-tablet800 significa que é a largura dele é = 1000*/
     body {
-        background-image: url(/img/background-tablet1000.png);
+        background-image: url(./img/background-tablet1000.png);
     }
     
     #title{
@@ -254,7 +254,7 @@ span{
 
     /*background-tablet800 significa que é a largura dele é = 800*/
     body {
-        background-image: url(/img/background-tablet800.png);
+        background-image: url(./img/background-tablet800.png);
         
     }
 
@@ -273,7 +273,7 @@ span{
 
 @media screen and (max-width: 780px) {
     body {
-        background-image: url(/img/background-tablet.png);
+        background-image: url(./img/background-tablet.png);
     }
     
     #title{
@@ -325,7 +325,7 @@ span{
 
     /*background-tablet800 significa que é a largura dele é = 800*/
     body {
-        background-image: url(/img/background-tablet1000.png);
+        background-image: url(./img/background-tablet1000.png);
     }
     
     img {
@@ -338,7 +338,7 @@ span{
 
     /*background-tablet800 significa que é a largura dele é = 800*/
     body {
-        background-image: url(/img/background-tablet800.png);
+        background-image: url(./img/background-tablet800.png);
     }
     
     article img {
@@ -349,7 +349,7 @@ span{
 @media screen and (max-width: 430px) {
     
     body {
-        background-image: url(/img/background-mobile.png);
+        background-image: url(./img/background-mobile.png);
     }
     ul{
         display: flex;
@@ -370,7 +370,7 @@ span{
 
 @media screen and (max-width: 300px) {
     body {
-        background-image: url(/img/background-mobile.png);
+        background-image: url(./img/background-mobile.png);
     }
 
     h2{

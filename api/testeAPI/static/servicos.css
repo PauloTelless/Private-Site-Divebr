@@ -11,7 +11,7 @@
 
 /*inicio cartões*/
 body{
-    background-image: url(/img/backgroud-form.png);
+    background-image: url(./img/backgroud-form.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +103,7 @@ body{
 @media screen and (max-width: 1440px) {
     /*background-servicos1400 significa que a imagem tem 1400px de largura*/
     body{
-        background-image: url(/img/background-servicos1400.png);
+        background-image: url(./img/background-servicos1400.png);
     }
 }
 
