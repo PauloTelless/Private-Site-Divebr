@@ -12,7 +12,7 @@ def home():
 def servicos():
     return render_template("servicos.html")
 
-@app.route("/contato")
+@app.route("/contatos")
 def contato():
     return render_template("contato.html")
 
