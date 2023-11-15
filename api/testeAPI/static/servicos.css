@@ -55,6 +55,7 @@ body{
 
 .container .card .content p {
     color: white;
+    font-family: sans-serif;
     transition: 0.5s;
     text-align: center;
     font-size: 15px;
